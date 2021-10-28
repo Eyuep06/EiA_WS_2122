@@ -2,37 +2,45 @@ namespace EventInspector {
 
     window.addEventListener("load", handleload);
 
-    let div0: HTMLElement = document.querySelector("#div0");
-    let div1: HTMLElement = document.querySelector("div1");
-    let body: HTMLElement = document.querySelector("body");
+
 
     function handleload(): void {
         document.addEventListener("mousemove", setInfobox);
-        document.addEventListener("click", setInfobox);
-        document.addEventListener("keyup", setInfobox);
 
-        body.addEventListener("click", setInfobox);
-        body.addEventListener("keyup", setInfobox);
+        document.addEventListener("click", logInfo);
+        document.addEventListener("keyup", logInfo);
 
-        div0.addEventListener("click", setInfobox);
-        div0.addEventListener("keyup", setInfobox);
-        div1.addEventListener("click", setInfobox);
-        div1.addEventListener("keyup", setInfobox);
+        document.querySelector("body").addEventListener("click", logInfo);
+        document.querySelector("body").addEventListener("keyup", logInfo);
+
+        document.querySelector("#div0").addEventListener("click", logInfo);
+        document.querySelector("#div0").addEventListener("keyup", logInfo);
+        document.querySelector("#div1").addEventListener("click", logInfo);
+        document.querySelector("#div1").addEventListener("keyup", logInfo);
 
     }
 
     function setInfobox(_event: MouseEvent): void {
-       
-       let posX: number = _event.screenX;
-       let posY: number = _event.screenY;
 
-       document.querySelector("span").innerHTML = posX + ", " + posY;
+        let infobox: HTMLElement = document.querySelector("span");
+        let posX: number = _event.screenX;
+        let posY: number = _event.screenY - 103;
 
+
+        infobox.innerHTML = "X: " + posX + " Y: " + posY + _event.target;
+
+        infobox.style.top = posY + 10 + "px";
+        infobox.style.left = posX + 10 + "px";
     }
 
 
 
+    function logInfo(_event: Event): void {
+        console.log("Event Object = " + _event + " Current Target = " + _event.currentTarget, " Target = " + _event.target + " Type = " + _event.type);
 
+
+
+    }
 
 
 
