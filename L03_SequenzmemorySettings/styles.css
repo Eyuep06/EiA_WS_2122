@@ -1,0 +1,13 @@
+.isHidden {
+    display: none;
+}
+
+span {
+    height: 50px;
+    width: 25px;
+    border:  2px solid black;
+    float: left;
+    margin-right: 5%;
+
+
+}

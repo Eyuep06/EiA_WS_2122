@@ -1,18 +1,19 @@
+"use strict";
 var abgabe2;
 (function (abgabe2) {
-    var subjekte = ["Harry", "Hermine", "Ron", "Hagrid", "Snape", "Dumbledore"];
-    var praedikate = ["braut", "liebt", "studiert", "hasst", "zaubert", "zerstört"];
-    var objekte = ["Zaubertränke", "den Grimm", "Lupin", "Hogwarts", "die Karte des Rumtreibers", "Dementoren"];
+    let subjekte = ["Harry", "Hermine", "Ron", "Hagrid", "Snape", "Dumbledore"];
+    let praedikate = ["braut", "liebt", "studiert", "hasst", "zaubert", "zerstört"];
+    let objekte = ["Zaubertränke", "den Grimm", "Lupin", "Hogwarts", "die Karte des Rumtreibers", "Dementoren"];
     //console.log(subjekte, praedikate, objekte);
-    for (var i = subjekte.length; i >= 1; i--) {
+    for (let i = subjekte.length; i >= 1; i--) {
         //console.log(i);
         getVerse(subjekte, praedikate, objekte);
     }
     function getVerse(_subjekte, _praedikate, _objekte) {
-        var verse = "";
-        var ergebnisSubjekte;
-        var ergebnisPraedikate;
-        var ergebnisObjekte;
+        let verse = "";
+        let ergebnisSubjekte;
+        let ergebnisPraedikate;
+        let ergebnisObjekte;
         ergebnisSubjekte = Math.floor(Math.random() * subjekte.length);
         ergebnisPraedikate = Math.floor(Math.random() * praedikate.length);
         ergebnisObjekte = Math.floor(Math.random() * objekte.length);

@@ -1,3 +1,4 @@
+"use strict";
 var EventInspector;
 (function (EventInspector) {
     window.addEventListener("load", handleload);
@@ -13,9 +14,9 @@ var EventInspector;
         document.querySelector("#div1").addEventListener("keyup", logInfo);
     }
     function setInfobox(_event) {
-        var infobox = document.querySelector("span");
-        var posX = _event.screenX;
-        var posY = _event.screenY - 103;
+        let infobox = document.querySelector("span");
+        let posX = _event.screenX;
+        let posY = _event.screenY - 103;
         infobox.innerHTML = "X: " + posX + " Y: " + posY + _event.target;
         infobox.style.top = posY + 10 + "px";
         infobox.style.left = posX + 10 + "px";
