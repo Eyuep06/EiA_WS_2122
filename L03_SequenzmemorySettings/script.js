@@ -57,7 +57,7 @@ var L03Sequenzmemory;
             let textContent = target.textContent;
             nutzerClickArray.push(textContent);
             if (benutzereingabeArray[i] == nutzerClickArray[i] && i == shuffledArray.length) {
-                alert("keep going bratha");
+                alert("sauber");
             }
             else if (benutzereingabeArray[i] != nutzerClickArray[i]) {
                 alert("Schwache Leistung");

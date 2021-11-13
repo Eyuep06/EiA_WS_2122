@@ -77,14 +77,15 @@ namespace L03Sequenzmemory {
             nutzerClickArray.push(textContent);
 
             if (benutzereingabeArray[i] == nutzerClickArray[i] && i == shuffledArray.length) {
-                alert("keep going bratha");
+                alert("sauber");
+                
 
             }
 
             else if (benutzereingabeArray[i] != nutzerClickArray[i]) {
             alert("Schwache Leistung");
 
-        }
+        
 
     }
 
@@ -96,5 +97,7 @@ namespace L03Sequenzmemory {
 }
 
 
+
+}
 
 }
