@@ -5,7 +5,7 @@ namespace L03Sequenzmemory {
     let shuffledArray: string[] = [];
     let karte: HTMLSpanElement;
     let background: string;
-    let allInputs: HTMLInputElement [];
+    let allInputs: NodeListOf<HTMLInputElement>;
     let formData: FormData;
 
 
