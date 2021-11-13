@@ -3,6 +3,10 @@ namespace L03Sequenzmemory {
     let benutzereingabeArray: string[] = [];
     let benutzereingabe: string;
     let shuffledArray: string[] = [];
+    let karte: HTMLSpanElement;
+    let background: string;
+    let allInputs: HTMLInputElement [];
+    let formData: FormData;
 
 
 
@@ -32,7 +36,7 @@ namespace L03Sequenzmemory {
         console.log(benutzereingabeArray);
         console.log(benutzereingabe);
         console.log(shuffledArray);
-        
+
 
         return _array;
     }
@@ -42,7 +46,7 @@ namespace L03Sequenzmemory {
         while (letters >= 0) {
 
             let spielfeld: HTMLElement = <HTMLSpanElement>document.getElementById("spielfeld");
-            let karte: HTMLSpanElement = document.createElement("span");
+            karte = document.createElement("span");
             spielfeld.appendChild(karte);
             karte.addEventListener("click", check);
 
@@ -53,16 +57,44 @@ namespace L03Sequenzmemory {
             setTimeout(function (): void { buchstabe.classList.add("isHidden"); }, 5000);
         }
 
+        //übergabe klappt nicht
+        formData = new FormData(document.forms[0]);
+        background = allInputs[1].value;
+        document.body.style.backgroundColor = background;
+
+    }
+    // die Überprüfung klappt leider noch nicht ganz
+    function check(_event: MouseEvent): void {
+        karte.classList.remove("isHidden");
+
+
+        for (let i: number = 0; i <= shuffledArray.length; i++) {
+
+            let nutzerClickArray: string[] = [];
+            let target: HTMLElement = <HTMLElement>_event.target;
+
+            let textContent: string = <string>target.textContent;
+            nutzerClickArray.push(textContent);
+
+            if (benutzereingabeArray[i] == nutzerClickArray[i] && i == shuffledArray.length) {
+                alert("keep going bratha");
+
+            }
+
+            else if (benutzereingabeArray[i] != nutzerClickArray[i]) {
+            alert("Schwache Leistung");
+
+        }
+
     }
 
-    function check(_event: Event): void {
-        console.log("ich wurde geklickt");
-        // is clicked p value same as value 0 of correct sequenz array
-        
-    }
+
+
+
+
+
 }
 
 
 
-
-
+}

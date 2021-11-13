@@ -5,6 +5,10 @@ var L03Sequenzmemory;
     let benutzereingabeArray = [];
     let benutzereingabe;
     let shuffledArray = [];
+    let karte;
+    let background;
+    let allInputs;
+    let formData;
     function startGame() {
         document.getElementById("fsSpecial")?.classList.add("isHidden");
         let eingabefeldWert = document.getElementById("eingabefeld");
@@ -30,7 +34,7 @@ var L03Sequenzmemory;
         let letters = shuffledArray.length - 1;
         while (letters >= 0) {
             let spielfeld = document.getElementById("spielfeld");
-            let karte = document.createElement("span");
+            karte = document.createElement("span");
             spielfeld.appendChild(karte);
             karte.addEventListener("click", check);
             let buchstabe = document.createElement("p");
@@ -39,10 +43,26 @@ var L03Sequenzmemory;
             letters--;
             setTimeout(function () { buchstabe.classList.add("isHidden"); }, 5000);
         }
+        //übergabe klappt nicht
+        formData = new FormData(document.forms[0]);
+        background = allInputs[1].value;
+        document.body.style.backgroundColor = background;
     }
+    // die Überprüfung klappt leider noch nicht ganz
     function check(_event) {
-        console.log("ich wurde geklickt");
-        // is clicked p value same as value 0 of correct sequenz array
+        karte.classList.remove("isHidden");
+        for (let i = 0; i <= shuffledArray.length; i++) {
+            let nutzerClickArray = [];
+            let target = _event.target;
+            let textContent = target.textContent;
+            nutzerClickArray.push(textContent);
+            if (benutzereingabeArray[i] == nutzerClickArray[i] && i == shuffledArray.length) {
+                alert("keep going bratha");
+            }
+            else if (benutzereingabeArray[i] != nutzerClickArray[i]) {
+                alert("Schwache Leistung");
+            }
+        }
     }
 })(L03Sequenzmemory || (L03Sequenzmemory = {}));
 //# sourceMappingURL=script.js.map
