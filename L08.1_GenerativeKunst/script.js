@@ -1,4 +1,10 @@
 "use strict";
+/*
+Aufgabe: <L08.1_GenerativeKunst>
+Name: <Eyüp Öcal>
+Matrikel: <268022>
+Datum: <18.11.2021>
+*/
 var GenerativeKunst;
 (function (GenerativeKunst) {
     let crc2;
