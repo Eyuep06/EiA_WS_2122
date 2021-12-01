@@ -18,6 +18,11 @@ namespace goldenerHerbst {
         drawCloud({ x: 550, y: 100 }, { x: 200, y: 75 });
         drawMountains({ x: 0, y: horizon }, 75, 200, "grey", "white");
         drawMountains({ x: 0, y: horizon }, 50, 150, "grey", "lightgrey");
+        drawTree({ x: 50, y: 450 }, { x: 150, y: 100 });
+        drawTree({ x: 250, y: 350 }, { x: 150, y: 100 });
+        drawTree({ x: 550, y: 400 }, { x: 150, y: 100 });
+        drawLeaf1({ x: 400, y: 300 }, {x: 400, y: 600});
+        drawLeaf2({ x: 400, y: 300 }, {x: 400, y: 600});
 
     }
 
@@ -73,13 +78,13 @@ namespace goldenerHerbst {
 
     function drawMountains(_position: Vector, _min: number, _max: number, _colorLow: string, _colorHigh: string): void {
         let stepMin: number = 10;
-        let stepMax: number = 50;
+        let stepMax: number = 150;
         let x: number = 0;
 
         crc2.save();
         crc2.translate(_position.x, _position.y);
-        crc2.moveTo(0, 0);
         crc2.beginPath();
+        crc2.moveTo(0, 0);
         crc2.lineTo(0, -_max);
 
         do {
@@ -97,10 +102,76 @@ namespace goldenerHerbst {
         crc2.fillStyle = gradient;
         crc2.fill();
         crc2.restore();
+    }
+
+    function drawTree(_position: Vector, _size: Vector): void {
+        crc2.beginPath();
+        crc2.fillStyle = "brown";
+        crc2.fillRect(_position.x, _position.y, 50, 100);
+
+        let nParticles: number = 35;
+        let radiusParticle: number = 30;
+        let particle: Path2D = new Path2D();
+
+        particle.arc(0, 0, radiusParticle, 0, 2 * Math.PI);
+        crc2.save();
+        crc2.translate(_position.x, _position.y);
+        crc2.fillStyle = "orange";
+
+        for (let drawn: number = 0; drawn < nParticles; drawn++) {
+            crc2.save();
+            let x: number = (Math.random() - 0.5) * _size.x;
+            let y: number = - (Math.random()) * _size.y;
+            crc2.translate(x, y);
+            crc2.fill(particle);
+            crc2.restore();
+        }
+        crc2.restore();
+    }
+
+    function drawLeaf1(_position: Vector, _size: Vector): void {
+        let nLeafs: number = 10;
+        let leaf: Path2D = new Path2D();
+        //leaf
+        crc2.beginPath();
+        leaf.arc(0, 0, 16, 0, Math.PI * .25);
+        crc2.save();
+        crc2.translate(_position.x, _position.y);
+        crc2.fillStyle = "orange";
+
+        for (let i: number = 0; i < nLeafs; i++) {
+            crc2.save();
+            let x: number = (Math.random() - 0.5) * _size.x;
+            let y: number = - (Math.random()) * _size.y;
+            crc2.translate(x, y);
+            crc2.fill(leaf);
+            crc2.restore();
+        }
+        crc2.restore();
 
     }
 
+    function drawLeaf2(_position: Vector, _size: Vector): void {
+        let nLeafs: number = 10;
+        let leaf: Path2D = new Path2D();
+        //leaf
+        crc2.beginPath();
+        leaf.arc(0, 0, 16, 0, Math.PI * .25);
+        crc2.save();
+        crc2.translate(_position.x, _position.y);
+        crc2.fillStyle = "lightbrown";
 
+        for (let i: number = 0; i < nLeafs; i++) {
+            crc2.save();
+            let x: number = (Math.random() - 0.5) * _size.x;
+            let y: number = - (Math.random()) * _size.y;
+            crc2.translate(x, y);
+            crc2.fill(leaf);
+            crc2.restore();
+        }
+        crc2.restore();
+
+    }
 
 
 
