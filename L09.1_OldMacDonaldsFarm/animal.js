@@ -8,12 +8,12 @@ var OldMacDonaldsFarm;
             this.food = _food;
             this.eatenAmount = _eatenAmount;
             this.sound = _sound;
-            this.text = `Ich bin ${this.type} und mache ${this.sound}. Ich esse gerne ${this.food}`;
+            this.text = `Ich bin ${this.type} und mache ${this.sound}. Ich esse gerne ${this.food}.`;
         }
-        stock(_stock) {
-            let difference;
-            difference = _stock - this.eatenAmount;
-        }
+        // stock(_stock: FoodStock): string {
+        //     // let stock: string = this.food + ":" + _stock + "Kg";
+        //     // return (stock);
+        // }
         sing() {
             // let h3: HTMLElement = <HTMLElement> document.querySelector("h3");
             // h3.innerHTML = (this.name);
