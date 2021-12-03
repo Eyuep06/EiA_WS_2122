@@ -26,9 +26,7 @@ namespace OldMacDonaldsFarm {
 
         sing(): string {
 
-            let text: string;
-            text = "<h3>" + this.name + "</h3>" + this.text;
-            return (text);
+            return `<h3>${this.name}</h3> ${this.text}`;
 
         }
 
