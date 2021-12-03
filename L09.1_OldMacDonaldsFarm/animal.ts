@@ -7,27 +7,25 @@ namespace OldMacDonaldsFarm {
         sound: string;
         text: string;
         name: string;
+        foodAmount: number;
 
-        constructor(_type: string, _food: string, _eatenAmount: number, _sound: string, _name: string) {
+        constructor(_type: string, _food: string, _eatenAmount: number, _sound: string, _name: string, _foodAmount: number) {
             this.type = _type;
             this.name = _name;
             this.food = _food;
             this.eatenAmount = _eatenAmount;
             this.sound = _sound;
             this.text = `Ich bin ${this.type} und mache ${this.sound}. Ich esse gerne ${this.food}.`;
+            this.foodAmount = _foodAmount;
         }
 
-        // stock(_stock: FoodStock): string {
-        //     // let stock: string = this.food + ":" + _stock + "Kg";
+        stock(): string {
 
-        //     // return (stock);
-        // }
+            return `<b>${this.food}</b> : ${this.foodAmount} kg, <br>`;
+        }
 
         sing(): string {
-            // let h3: HTMLElement = <HTMLElement> document.querySelector("h3");
-            // h3.innerHTML = (this.name);
-            // let p: HTMLElement = <HTMLElement> document.getElementById("text");
-            // p.innerHTML = (this.text);
+
             let text: string;
             text = "<h3>" + this.name + "</h3>" + "<br>" + this.text;
             return (text);

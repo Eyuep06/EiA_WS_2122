@@ -2,20 +2,17 @@
 var OldMacDonaldsFarm;
 (function (OldMacDonaldsFarm) {
     window.addEventListener("load", handleLoad);
-    let cow = new OldMacDonaldsFarm.Animal("die Kuh", "Graß", 15, "muuuuh", "Jon Jones");
-    let chicken = new OldMacDonaldsFarm.Animal("das Huhn", "Grains", 2, "gackgack", "Conor McGregor");
-    let pig = new OldMacDonaldsFarm.Animal("das Schwein", "Fleisch", 5, "oink", "Dillon Danis");
-    let donkey = new OldMacDonaldsFarm.Animal("der Esel", "Graß", 10, "iiiiaa", "Leon Edwards");
-    let dog = new OldMacDonaldsFarm.Animal("der Hund", "Fleisch", 3, "Wuff", "TJ Dilleshaw");
+    let cow = new OldMacDonaldsFarm.Animal("die Kuh", "Graß", 15, "muuuuh", "Jon Jones", 50);
+    let chicken = new OldMacDonaldsFarm.Animal("das Huhn", "Insekten", 2, "gackgack", "Conor McGregor", 25);
+    let pig = new OldMacDonaldsFarm.Animal("das Schwein", "Heu", 5, "oink", "Dillon Danis", 50);
+    let donkey = new OldMacDonaldsFarm.Animal("der Esel", "Getreide", 10, "iiiiaa", "Leon Edwards", 30);
+    let dog = new OldMacDonaldsFarm.Animal("der Hund", "Äpfel", 3, "Wuff", "TJ Dilleshaw", 10);
     let allAnimals = [cow, chicken, pig, donkey, dog];
-    // export interface FoodStock {
-    //     [key: string]: number;
-    // }
-    // let food: FoodStock = {
-    //     grasscer: 50,
-    //     meat: 25,
-    //     grains: 30
-    // };
+    let grassStock = 50;
+    let insectsStock = 25;
+    let grainStock = 30;
+    let appleStock = 10;
+    let hayStock = 50;
     function handleLoad(_event) {
         startDay();
     }
@@ -26,12 +23,9 @@ var OldMacDonaldsFarm;
             let textArea = document.getElementById("textarea");
             textArea.appendChild(p);
         }
-        // for (let i: number = 1; i <= 3; i++ ) {
-        //     let p2: HTMLParagraphElement = document.createElement("p");
-        //     p2.innerHTML = allAnimals[i].stock(food);
-        //     let vorratArea: HTMLDivElement = <HTMLDivElement> document.getElementById("Vorrat");
-        //     vorratArea.appendChild(p2);
-        // }
+        //cow
+        cow.foodAmount = cow.foodAmount - cow.eatenAmount;
+        console.log(cow.foodAmount);
     }
 })(OldMacDonaldsFarm || (OldMacDonaldsFarm = {}));
 //# sourceMappingURL=script.js.map

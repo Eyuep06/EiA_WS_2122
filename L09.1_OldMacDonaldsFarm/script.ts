@@ -1,21 +1,19 @@
 namespace OldMacDonaldsFarm {
 
     window.addEventListener("load", handleLoad);
-    let cow: Animal = new Animal ("die Kuh", "Graß", 15, "muuuuh", "Jon Jones");
-    let chicken: Animal = new Animal ("das Huhn", "Grains", 2, "gackgack", "Conor McGregor");
-    let pig: Animal = new Animal ("das Schwein", "Fleisch", 5, "oink", "Dillon Danis");
-    let donkey: Animal = new Animal ("der Esel", "Graß", 10, "iiiiaa", "Leon Edwards");
-    let dog: Animal = new Animal ("der Hund", "Fleisch", 3, "Wuff", "TJ Dilleshaw");
+    let cow: Animal = new Animal ("die Kuh", "Graß", 15, "muuuuh", "Jon Jones", 50);
+    let chicken: Animal = new Animal ("das Huhn", "Insekten", 2, "gackgack", "Conor McGregor", 25);
+    let pig: Animal = new Animal ("das Schwein", "Heu", 5, "oink", "Dillon Danis", 50);
+    let donkey: Animal = new Animal ("der Esel", "Getreide", 10, "iiiiaa", "Leon Edwards", 30);
+    let dog: Animal = new Animal ("der Hund", "Äpfel", 3, "Wuff", "TJ Dilleshaw", 10);
     let allAnimals: Animal[] = [cow, chicken, pig, donkey, dog];
-    // export interface FoodStock {
-    //     [key: string]: number;
-    // }
+    let grassStock: number = 50;
+    let insectsStock: number = 25;
+    let grainStock: number = 30;
+    let appleStock: number = 10;
+    let hayStock: number = 50;
 
-    // let food: FoodStock = {
-    //     grasscer: 50,
-    //     meat: 25,
-    //     grains: 30
-    // };
+
 
 
     
@@ -35,12 +33,12 @@ namespace OldMacDonaldsFarm {
             textArea.appendChild(p);
         }
 
-        // for (let i: number = 1; i <= 3; i++ ) {
-        //     let p2: HTMLParagraphElement = document.createElement("p");
-        //     p2.innerHTML = allAnimals[i].stock(food);
-        //     let vorratArea: HTMLDivElement = <HTMLDivElement> document.getElementById("Vorrat");
-        //     vorratArea.appendChild(p2);
-        // }
+        //cow
+        cow.foodAmount = cow.foodAmount - cow.eatenAmount;
+        console.log(cow.foodAmount);
+        
+
+       
     }
 
     
