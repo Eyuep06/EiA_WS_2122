@@ -10,13 +10,13 @@ namespace OldMacDonaldsFarm {
 
 
     function handleLoad(_event: Event): void {
-     startDay();
-     
+        startDay();
+
     }
 
 
     function startDay(): void {
-        
+
         for (let i: number = 0; i < allAnimals.length; i++) {
             let p: HTMLParagraphElement = document.createElement("p");
             p.innerHTML = allAnimals[i].sing();
@@ -28,12 +28,14 @@ namespace OldMacDonaldsFarm {
             let stockArea: HTMLDivElement = <HTMLDivElement>document.getElementById("Vorrat");
             stockArea.appendChild(p2);
         }
-        
+
     }
 
-    //uptadeStock();
+    uptadeStock();
+    //setTimeout(uptadeStock, 2000); 
+    //Timeout funktioniert irgendwie nicht
 
-    function uptadeStock (): void {
+    function uptadeStock(): void {
         //cow
         cow.foodAmount = cow.foodAmount - cow.eatenAmount;
 
@@ -48,10 +50,7 @@ namespace OldMacDonaldsFarm {
 
         //dog
         dog.foodAmount = dog.foodAmount - dog.eatenAmount;
-
     }
-
-    setTimeout (uptadeStock, 2000);
 
 
 

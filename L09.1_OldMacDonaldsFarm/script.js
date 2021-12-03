@@ -23,7 +23,9 @@ var OldMacDonaldsFarm;
             stockArea.appendChild(p2);
         }
     }
-    //uptadeStock();
+    uptadeStock();
+    //setTimeout(uptadeStock, 2000); 
+    //Timeout funktioniert irgendwie nicht
     function uptadeStock() {
         //cow
         cow.foodAmount = cow.foodAmount - cow.eatenAmount;
@@ -36,6 +38,5 @@ var OldMacDonaldsFarm;
         //dog
         dog.foodAmount = dog.foodAmount - dog.eatenAmount;
     }
-    setTimeout(uptadeStock, 2000);
 })(OldMacDonaldsFarm || (OldMacDonaldsFarm = {}));
 //# sourceMappingURL=script.js.map
