@@ -21,13 +21,13 @@ namespace OldMacDonaldsFarm {
 
         stock(): string {
 
-            return `<b>${this.food}</b> : ${this.foodAmount} kg, <br>`;
+            return `<h2>${this.food}:</h2>  ${this.foodAmount} Kg <br>`;
         }
 
         sing(): string {
 
             let text: string;
-            text = "<h3>" + this.name + "</h3>" + "<br>" + this.text;
+            text = "<h3>" + this.name + "</h3>" + this.text;
             return (text);
 
         }

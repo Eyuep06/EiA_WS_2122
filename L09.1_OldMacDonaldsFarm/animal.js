@@ -12,11 +12,11 @@ var OldMacDonaldsFarm;
             this.foodAmount = _foodAmount;
         }
         stock() {
-            return `<b>${this.food}</b> : ${this.foodAmount} kg, <br>`;
+            return `<h2>${this.food}:</h2>  ${this.foodAmount} Kg <br>`;
         }
         sing() {
             let text;
-            text = "<h3>" + this.name + "</h3>" + "<br>" + this.text;
+            text = "<h3>" + this.name + "</h3>" + this.text;
             return (text);
         }
     }
