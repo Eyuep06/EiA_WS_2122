@@ -1,3 +1,10 @@
+/*
+Aufgabe: <L09.1_OldMacDonaldsFarm>
+Name: <Eyüp Öcal>
+Matrikel: <268022>
+Datum: <03.12.2021>
+Quellen: <Kommilitonis mit denen Du zusammengearbeitet hast oder von denen Du dich inspirieren ließest>
+*/
 namespace OldMacDonaldsFarm {
 
     window.addEventListener("load", handleLoad);
