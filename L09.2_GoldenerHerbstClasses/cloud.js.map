@@ -1,1 +1,1 @@
-{"version":3,"file":"cloud.js","sourceRoot":"","sources":["cloud.ts"],"names":[],"mappings":""}
+{"version":3,"file":"cloud.js","sourceRoot":"","sources":["cloud.ts"],"names":[],"mappings":";AAAA,IAAU,uBAAuB,CAiBhC;AAjBD,WAAU,uBAAuB;IAC7B,MAAa,KAAK;QAId,YAAY,iBAAyB;YACjC,EAAE;QACN,CAAC;QAED,IAAI,CAAC,UAAkB;YACnB,MAAM;QACV,CAAC;QAED,IAAI;YACA,MAAM;QACV,CAAC;KACJ;IAfY,6BAAK,QAejB,CAAA;AACL,CAAC,EAjBS,uBAAuB,KAAvB,uBAAuB,QAiBhC"}
