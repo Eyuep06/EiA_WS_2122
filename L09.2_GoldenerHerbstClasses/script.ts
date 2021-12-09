@@ -21,7 +21,7 @@ namespace goldenerHerbstAnimation {
         drawTree(250, 350, 150, 100);
         drawTree(550, 400, 150, 100);
 
-        createLeafs(5);
+        createLeafs(10);
 
         window.setInterval(update, 20);
     }
@@ -113,15 +113,20 @@ namespace goldenerHerbstAnimation {
 
 
     function createLeafs(nLeafs: number): void {
-        let randomColor: number = Math.floor(Math.random() * 2);
         for (let i: number = 0; i < nLeafs; i++) {
-            let leaf: Leaf = new Leaf(colors[randomColor]);
+            let leaf: Leaf = new Leaf(colors[1]);
+            leafs.push(leaf);
+            console.log(leafs);
+
+        }
+        for (let i: number = 0; i < nLeafs; i++) {
+            let leaf: Leaf = new Leaf(colors[0]);
             leafs.push(leaf);
             console.log(leafs);
 
         }
     }
-    //hier ein fehler?
+
     function update(): void {
         crc2.putImageData(imageBg, 0, 0);
         crc2.putImageData(imageSun, 0, 0);

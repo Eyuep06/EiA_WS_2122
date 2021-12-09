@@ -19,7 +19,7 @@ var goldenerHerbstAnimation;
         drawTree(50, 450, 150, 100);
         drawTree(250, 350, 150, 100);
         drawTree(550, 400, 150, 100);
-        createLeafs(5);
+        createLeafs(10);
         window.setInterval(update, 20);
     }
     function drawBackground() {
@@ -92,14 +92,17 @@ var goldenerHerbstAnimation;
         imageTree = goldenerHerbstAnimation.crc2.getImageData(0, 0, goldenerHerbstAnimation.crc2.canvas.width, goldenerHerbstAnimation.crc2.canvas.height);
     }
     function createLeafs(nLeafs) {
-        let randomColor = Math.floor(Math.random() * 2);
         for (let i = 0; i < nLeafs; i++) {
-            let leaf = new goldenerHerbstAnimation.Leaf(colors[randomColor]);
+            let leaf = new goldenerHerbstAnimation.Leaf(colors[1]);
+            leafs.push(leaf);
+            console.log(leafs);
+        }
+        for (let i = 0; i < nLeafs; i++) {
+            let leaf = new goldenerHerbstAnimation.Leaf(colors[0]);
             leafs.push(leaf);
             console.log(leafs);
         }
     }
-    //hier ein fehler?
     function update() {
         goldenerHerbstAnimation.crc2.putImageData(imageBg, 0, 0);
         goldenerHerbstAnimation.crc2.putImageData(imageSun, 0, 0);
