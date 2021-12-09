@@ -1,5 +1,9 @@
 namespace goldenerHerbstAnimation {
     export let crc2: CanvasRenderingContext2D;
+    let imageBg: ImageData;
+    let imgageMountain: ImageData;
+    let imageSun: ImageData;
+    let imageTree: ImageData; 
     let leafs: Leaf[] = [];
     let colors: string[] = ["brown", "orange"];
 
@@ -10,6 +14,7 @@ namespace goldenerHerbstAnimation {
         crc2 = canvas.getContext("2d")!;
         let horizon: number = crc2.canvas.height * 0.62;
         drawBackground();
+        drawSun(150, 150);
         drawMountains(0, horizon, 75, 200, "grey", "white");
         drawMountains(0, horizon, 50, 150, "grey", "lightgrey");
         drawTree(50, 450, 150, 100);
@@ -21,6 +26,7 @@ namespace goldenerHerbstAnimation {
         window.setInterval(update, 20);
     }
 
+
     function drawBackground(): void {
         let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
         gradient.addColorStop(0, "lightblue");
@@ -28,6 +34,25 @@ namespace goldenerHerbstAnimation {
         gradient.addColorStop(1, "green");
 
         crc2.fillStyle = gradient;
+        crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
+
+        imageBg = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
+    }
+
+    function drawSun(_positionX: number, _positionY: number): void {
+        let r1: number = 30;
+        let r2: number = 120;
+        let gradient: CanvasGradient = crc2.createRadialGradient(0, 0, r1, 0, 0, r2);
+        gradient.addColorStop(0, "yellow");
+        gradient.addColorStop(1, "HSLA(60, 100%, 50%, 0)");
+        crc2.save();
+        crc2.translate(_positionX, _positionY);
+        crc2.fillStyle = gradient;
+        crc2.arc(0, 0, r2, 0, 2 * Math.PI);
+        crc2.fill();
+        crc2.restore();
+        imageSun = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
+
     }
 
     function drawMountains(_positionX: number, _positionY: number, _min: number, _max: number, _colorLow: string, _colorHigh: string): void {
@@ -56,6 +81,7 @@ namespace goldenerHerbstAnimation {
         crc2.fillStyle = gradient;
         crc2.fill();
         crc2.restore();
+        imgageMountain = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
     }
 
 
@@ -82,6 +108,7 @@ namespace goldenerHerbstAnimation {
             crc2.restore();
         }
         crc2.restore();
+        imageTree = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
     }
 
 
@@ -90,11 +117,16 @@ namespace goldenerHerbstAnimation {
         for (let i: number = 0; i < nLeafs; i++) {
             let leaf: Leaf = new Leaf(colors[randomColor]);
             leafs.push(leaf);
+            console.log(leafs);
+
         }
     }
-
+    //hier ein fehler?
     function update(): void {
-        crc2.fillRect(0, 0, crc2.canvas.width, crc2.canvas.height);
+        crc2.putImageData(imageBg, 0, 0);
+        crc2.putImageData(imageSun, 0, 0);
+        crc2.putImageData(imgageMountain, 0, 0);
+        crc2.putImageData(imageTree, 0, 0);
         for (let leaf of leafs) {
             leaf.move(1 / 50);
             leaf.draw();

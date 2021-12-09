@@ -1,6 +1,10 @@
 "use strict";
 var goldenerHerbstAnimation;
 (function (goldenerHerbstAnimation) {
+    let imageBg;
+    let imgageMountain;
+    let imageSun;
+    let imageTree;
     let leafs = [];
     let colors = ["brown", "orange"];
     window.addEventListener("load", handleLoad);
@@ -9,6 +13,7 @@ var goldenerHerbstAnimation;
         goldenerHerbstAnimation.crc2 = canvas.getContext("2d");
         let horizon = goldenerHerbstAnimation.crc2.canvas.height * 0.62;
         drawBackground();
+        drawSun(150, 150);
         drawMountains(0, horizon, 75, 200, "grey", "white");
         drawMountains(0, horizon, 50, 150, "grey", "lightgrey");
         drawTree(50, 450, 150, 100);
@@ -23,6 +28,22 @@ var goldenerHerbstAnimation;
         gradient.addColorStop(0.62, "white");
         gradient.addColorStop(1, "green");
         goldenerHerbstAnimation.crc2.fillStyle = gradient;
+        goldenerHerbstAnimation.crc2.fillRect(0, 0, goldenerHerbstAnimation.crc2.canvas.width, goldenerHerbstAnimation.crc2.canvas.height);
+        imageBg = goldenerHerbstAnimation.crc2.getImageData(0, 0, goldenerHerbstAnimation.crc2.canvas.width, goldenerHerbstAnimation.crc2.canvas.height);
+    }
+    function drawSun(_positionX, _positionY) {
+        let r1 = 30;
+        let r2 = 120;
+        let gradient = goldenerHerbstAnimation.crc2.createRadialGradient(0, 0, r1, 0, 0, r2);
+        gradient.addColorStop(0, "yellow");
+        gradient.addColorStop(1, "HSLA(60, 100%, 50%, 0)");
+        goldenerHerbstAnimation.crc2.save();
+        goldenerHerbstAnimation.crc2.translate(_positionX, _positionY);
+        goldenerHerbstAnimation.crc2.fillStyle = gradient;
+        goldenerHerbstAnimation.crc2.arc(0, 0, r2, 0, 2 * Math.PI);
+        goldenerHerbstAnimation.crc2.fill();
+        goldenerHerbstAnimation.crc2.restore();
+        imageSun = goldenerHerbstAnimation.crc2.getImageData(0, 0, goldenerHerbstAnimation.crc2.canvas.width, goldenerHerbstAnimation.crc2.canvas.height);
     }
     function drawMountains(_positionX, _positionY, _min, _max, _colorLow, _colorHigh) {
         let stepMin = 10;
@@ -46,6 +67,7 @@ var goldenerHerbstAnimation;
         goldenerHerbstAnimation.crc2.fillStyle = gradient;
         goldenerHerbstAnimation.crc2.fill();
         goldenerHerbstAnimation.crc2.restore();
+        imgageMountain = goldenerHerbstAnimation.crc2.getImageData(0, 0, goldenerHerbstAnimation.crc2.canvas.width, goldenerHerbstAnimation.crc2.canvas.height);
     }
     function drawTree(_positionX, _positionY, _sizeX, _sizeY) {
         goldenerHerbstAnimation.crc2.beginPath();
@@ -67,16 +89,22 @@ var goldenerHerbstAnimation;
             goldenerHerbstAnimation.crc2.restore();
         }
         goldenerHerbstAnimation.crc2.restore();
+        imageTree = goldenerHerbstAnimation.crc2.getImageData(0, 0, goldenerHerbstAnimation.crc2.canvas.width, goldenerHerbstAnimation.crc2.canvas.height);
     }
     function createLeafs(nLeafs) {
         let randomColor = Math.floor(Math.random() * 2);
         for (let i = 0; i < nLeafs; i++) {
             let leaf = new goldenerHerbstAnimation.Leaf(colors[randomColor]);
             leafs.push(leaf);
+            console.log(leafs);
         }
     }
+    //hier ein fehler?
     function update() {
-        goldenerHerbstAnimation.crc2.fillRect(0, 0, goldenerHerbstAnimation.crc2.canvas.width, goldenerHerbstAnimation.crc2.canvas.height);
+        goldenerHerbstAnimation.crc2.putImageData(imageBg, 0, 0);
+        goldenerHerbstAnimation.crc2.putImageData(imageSun, 0, 0);
+        goldenerHerbstAnimation.crc2.putImageData(imgageMountain, 0, 0);
+        goldenerHerbstAnimation.crc2.putImageData(imageTree, 0, 0);
         for (let leaf of leafs) {
             leaf.move(1 / 50);
             leaf.draw();

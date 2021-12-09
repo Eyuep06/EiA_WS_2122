@@ -22,15 +22,15 @@ var goldenerHerbstAnimation;
                 this.position.y -= goldenerHerbstAnimation.crc2.canvas.height;
         }
         draw() {
-            console.log("draw");
+            let leaf = new Path2D();
             goldenerHerbstAnimation.crc2.beginPath();
-            goldenerHerbstAnimation.crc2.moveTo(0, 0);
-            goldenerHerbstAnimation.crc2.lineTo(300, 150);
-            goldenerHerbstAnimation.crc2.lineTo(450, 344);
+            leaf.arc(0, 0, 16, 0, Math.PI * .25);
+            goldenerHerbstAnimation.crc2.save();
+            goldenerHerbstAnimation.crc2.translate(this.position.x, this.position.y);
             goldenerHerbstAnimation.crc2.fillStyle = this.color;
-            goldenerHerbstAnimation.crc2.fill();
-            goldenerHerbstAnimation.crc2.closePath();
+            goldenerHerbstAnimation.crc2.fill(leaf);
             goldenerHerbstAnimation.crc2.stroke();
+            goldenerHerbstAnimation.crc2.restore();
         }
         changeDirection(_timeslice) {
             console.log("change direction");
