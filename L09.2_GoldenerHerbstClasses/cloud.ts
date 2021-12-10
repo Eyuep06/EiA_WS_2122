@@ -7,23 +7,29 @@ namespace goldenerHerbstAnimation {
 
         constructor() {
             this.startingPosition = new Vector(550, 100);
-            this.size = new Vector (200, 75);
+            this.size = new Vector(200, 75);
             this.velocity = new Vector(0, 0);
             this.velocity.random(100, 200);
         }
 
         move(_timeslice: number): void {
             console.log("wolke bewegen");
-            
-            let offset: Vector = new Vector(this.velocity.x, this.velocity.y);
+
+            let offset: Vector = new Vector(this.velocity.x, 0);
             offset.scale(_timeslice);
             this.startingPosition.add(offset);
-            
+
+            if (this.startingPosition.x < 0)
+                this.startingPosition.x += crc2.canvas.width;
+
+            if (this.startingPosition.x > crc2.canvas.width)
+                this.startingPosition.x -= crc2.canvas.width;
+
         }
 
         draw(): void {
             //console.log("wolke zeichnen");
-            
+
             let nParticles: number = 30;
             let radiusParticle: number = 50;
             let particle: Path2D = new Path2D();

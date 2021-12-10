@@ -10,9 +10,13 @@ var goldenerHerbstAnimation;
         }
         move(_timeslice) {
             console.log("wolke bewegen");
-            let offset = new goldenerHerbstAnimation.Vector(this.velocity.x, this.velocity.y);
+            let offset = new goldenerHerbstAnimation.Vector(this.velocity.x, 0);
             offset.scale(_timeslice);
             this.startingPosition.add(offset);
+            if (this.startingPosition.x < 0)
+                this.startingPosition.x += goldenerHerbstAnimation.crc2.canvas.width;
+            if (this.startingPosition.x > goldenerHerbstAnimation.crc2.canvas.width)
+                this.startingPosition.x -= goldenerHerbstAnimation.crc2.canvas.width;
         }
         draw() {
             //console.log("wolke zeichnen");
