@@ -1,4 +1,11 @@
 "use strict";
+/*
+Aufgabe: <L09.1_OldMacDonaldsFarm>
+Name: <Eyüp Öcal>
+Matrikel: <268022>
+Datum: <10.12.2021>
+Quellen: <Mit Fatih zusammengearbeitet>
+*/
 var goldenerHerbstAnimation;
 (function (goldenerHerbstAnimation) {
     let imageBg;
@@ -19,6 +26,8 @@ var goldenerHerbstAnimation;
         drawTree(50, 450, 150, 100);
         drawTree(250, 350, 150, 100);
         drawTree(550, 400, 150, 100);
+        //warum???
+        let cloud = new goldenerHerbstAnimation.Cloud({ x: 23, y: 23 });
         createLeafs(10);
         window.setInterval(update, 20);
     }

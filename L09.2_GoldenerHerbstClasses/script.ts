@@ -1,3 +1,10 @@
+/*
+Aufgabe: <L09.1_OldMacDonaldsFarm>
+Name: <Eyüp Öcal>
+Matrikel: <268022>
+Datum: <10.12.2021>
+Quellen: <Mit Fatih zusammengearbeitet>
+*/
 namespace goldenerHerbstAnimation {
     export let crc2: CanvasRenderingContext2D;
     let imageBg: ImageData;
@@ -20,6 +27,8 @@ namespace goldenerHerbstAnimation {
         drawTree(50, 450, 150, 100);
         drawTree(250, 350, 150, 100);
         drawTree(550, 400, 150, 100);
+        //warum???
+        let cloud: Cloud = new Cloud({x: 23, y: 23});
 
         createLeafs(10);
 
@@ -111,6 +120,8 @@ namespace goldenerHerbstAnimation {
         imageTree = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
     }
 
+
+    
 
     function createLeafs(nLeafs: number): void {
         for (let i: number = 0; i < nLeafs; i++) {
