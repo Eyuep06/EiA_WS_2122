@@ -8,6 +8,7 @@ Quellen: <Mit Fatih zusammengearbeitet>
 */
 var goldenerHerbstAnimation;
 (function (goldenerHerbstAnimation) {
+    let cloud;
     let imageBg;
     let imgageMountain;
     let imageSun;
@@ -26,6 +27,7 @@ var goldenerHerbstAnimation;
         drawTree(50, 450, 150, 100);
         drawTree(250, 350, 150, 100);
         drawTree(550, 400, 150, 100);
+        createCloud();
         createLeafs(10);
         window.setInterval(update, 20);
     }
@@ -98,6 +100,10 @@ var goldenerHerbstAnimation;
         goldenerHerbstAnimation.crc2.restore();
         imageTree = goldenerHerbstAnimation.crc2.getImageData(0, 0, goldenerHerbstAnimation.crc2.canvas.width, goldenerHerbstAnimation.crc2.canvas.height);
     }
+    function createCloud() {
+        cloud = new goldenerHerbstAnimation.Cloud();
+        cloud.draw();
+    }
     function createLeafs(nLeafs) {
         for (let i = 0; i < nLeafs; i++) {
             let leaf = new goldenerHerbstAnimation.Leaf(colors[1]);
@@ -119,7 +125,6 @@ var goldenerHerbstAnimation;
             leaf.move(1 / 50);
             leaf.draw();
         }
-        let cloud = new goldenerHerbstAnimation.Cloud();
         cloud.draw();
         cloud.move(1 / 50);
     }

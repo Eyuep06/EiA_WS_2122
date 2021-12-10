@@ -7,12 +7,14 @@ Quellen: <Mit Fatih zusammengearbeitet>
 */
 namespace goldenerHerbstAnimation {
     export let crc2: CanvasRenderingContext2D;
+    let cloud: Cloud;
     let imageBg: ImageData;
     let imgageMountain: ImageData;
     let imageSun: ImageData;
-    let imageTree: ImageData; 
+    let imageTree: ImageData;
     let leafs: Leaf[] = [];
     let colors: string[] = ["brown", "orange"];
+
 
     window.addEventListener("load", handleLoad);
 
@@ -28,7 +30,7 @@ namespace goldenerHerbstAnimation {
         drawTree(250, 350, 150, 100);
         drawTree(550, 400, 150, 100);
 
-
+        createCloud();
         createLeafs(10);
 
         window.setInterval(update, 20);
@@ -120,7 +122,13 @@ namespace goldenerHerbstAnimation {
     }
 
 
-    
+    function createCloud(): void {
+        cloud = new Cloud();
+        cloud.draw();
+        
+    }
+
+
 
     function createLeafs(nLeafs: number): void {
         for (let i: number = 0; i < nLeafs; i++) {
@@ -146,9 +154,11 @@ namespace goldenerHerbstAnimation {
             leaf.move(1 / 50);
             leaf.draw();
         }
-        let cloud: Cloud = new Cloud();
         cloud.draw();
         cloud.move(1 / 50);
+
+
+
     }
 
 
