@@ -121,6 +121,7 @@ var goldenerHerbstAnimation;
         }
         let cloud = new goldenerHerbstAnimation.Cloud();
         cloud.draw();
+        cloud.move(1 / 50);
     }
 })(goldenerHerbstAnimation || (goldenerHerbstAnimation = {}));
 //# sourceMappingURL=script.js.map

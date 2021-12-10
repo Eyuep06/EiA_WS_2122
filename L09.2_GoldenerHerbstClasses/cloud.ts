@@ -13,6 +13,8 @@ namespace goldenerHerbstAnimation {
         }
 
         move(_timeslice: number): void {
+            console.log("wolke bewegen");
+            
             let offset: Vector = new Vector(this.velocity.x, this.velocity.y);
             offset.scale(_timeslice);
             this.startingPosition.add(offset);
@@ -20,7 +22,7 @@ namespace goldenerHerbstAnimation {
         }
 
         draw(): void {
-            console.log("wolke zeichnen");
+            //console.log("wolke zeichnen");
             
             let nParticles: number = 30;
             let radiusParticle: number = 50;

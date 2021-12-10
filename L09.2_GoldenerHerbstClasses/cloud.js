@@ -9,12 +9,13 @@ var goldenerHerbstAnimation;
             this.velocity.random(100, 200);
         }
         move(_timeslice) {
+            console.log("wolke bewegen");
             let offset = new goldenerHerbstAnimation.Vector(this.velocity.x, this.velocity.y);
             offset.scale(_timeslice);
             this.startingPosition.add(offset);
         }
         draw() {
-            console.log("wolke zeichnen");
+            //console.log("wolke zeichnen");
             let nParticles = 30;
             let radiusParticle = 50;
             let particle = new Path2D();

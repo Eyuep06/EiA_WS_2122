@@ -148,6 +148,7 @@ namespace goldenerHerbstAnimation {
         }
         let cloud: Cloud = new Cloud();
         cloud.draw();
+        cloud.move(1 / 50);
     }
 
 
