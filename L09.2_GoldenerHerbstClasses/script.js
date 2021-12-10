@@ -26,8 +26,6 @@ var goldenerHerbstAnimation;
         drawTree(50, 450, 150, 100);
         drawTree(250, 350, 150, 100);
         drawTree(550, 400, 150, 100);
-        //warum???
-        let cloud = new goldenerHerbstAnimation.Cloud({ x: 23, y: 23 });
         createLeafs(10);
         window.setInterval(update, 20);
     }
@@ -121,6 +119,8 @@ var goldenerHerbstAnimation;
             leaf.move(1 / 50);
             leaf.draw();
         }
+        let cloud = new goldenerHerbstAnimation.Cloud();
+        cloud.draw();
     }
 })(goldenerHerbstAnimation || (goldenerHerbstAnimation = {}));
 //# sourceMappingURL=script.js.map

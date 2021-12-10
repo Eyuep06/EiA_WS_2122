@@ -27,8 +27,7 @@ namespace goldenerHerbstAnimation {
         drawTree(50, 450, 150, 100);
         drawTree(250, 350, 150, 100);
         drawTree(550, 400, 150, 100);
-        //warum???
-        let cloud: Cloud = new Cloud({x: 23, y: 23});
+
 
         createLeafs(10);
 
@@ -147,6 +146,8 @@ namespace goldenerHerbstAnimation {
             leaf.move(1 / 50);
             leaf.draw();
         }
+        let cloud: Cloud = new Cloud();
+        cloud.draw();
     }
 
 

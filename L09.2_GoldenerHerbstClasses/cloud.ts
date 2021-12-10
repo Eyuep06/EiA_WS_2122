@@ -1,18 +1,27 @@
 namespace goldenerHerbstAnimation {
     export class Cloud {
-        postition: Vector;
+        size: Vector;
         startingPosition: Vector;
+        velocity: Vector;
 
-        constructor(_startingPosition: Vector) {
-            this.startingPosition = _startingPosition;
+
+        constructor() {
+            this.startingPosition = new Vector(550, 100);
+            this.size = new Vector (200, 75);
+            this.velocity = new Vector(0, 0);
+            this.velocity.random(100, 200);
         }
 
         move(_timeslice: number): void {
-            //move
+            let offset: Vector = new Vector(this.velocity.x, this.velocity.y);
+            offset.scale(_timeslice);
+            this.startingPosition.add(offset);
+            
         }
 
-        draw(_position: Vector, _size: Vector): void {
-
+        draw(): void {
+            console.log("wolke zeichnen");
+            
             let nParticles: number = 30;
             let radiusParticle: number = 50;
             let particle: Path2D = new Path2D();
@@ -22,13 +31,13 @@ namespace goldenerHerbstAnimation {
             gradient.addColorStop(0, "HSLA(0, 100%, 100%, 0.5)");
             gradient.addColorStop(1, "HSLA(0, 100%, 100%, 0)");
             crc2.save();
-            crc2.translate(_position.x, _position.y);
+            crc2.translate(this.startingPosition.x, this.startingPosition.y);
             crc2.fillStyle = gradient;
 
             for (let drawn: number = 0; drawn < nParticles; drawn++) {
                 crc2.save();
-                let x: number = (Math.random() - 0.5) * _size.x;
-                let y: number = - (Math.random()) * _size.y;
+                let x: number = (Math.random() - 0.5) * this.size.x;
+                let y: number = - (Math.random()) * this.size.y;
                 crc2.translate(x, y);
                 crc2.fill(particle);
                 crc2.restore();
