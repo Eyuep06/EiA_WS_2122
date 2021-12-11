@@ -44,10 +44,10 @@ namespace goldenerHerbstAnimation {
 
         }
 
-        changeDirection(_timeslice: number): void {
-            console.log("change direction");
+        // changeDirection(_timeslice: number): void {
+        //     console.log("change direction");
 
-        }
+        // }
     }
 
 

@@ -13,7 +13,7 @@ namespace goldenerHerbstAnimation {
         }
 
         move(_timeslice: number): void {
-            console.log("wolke bewegen");
+            //console.log("wolke bewegen");
 
             let offset: Vector = new Vector(this.velocity.x, 0);
             offset.scale(_timeslice);

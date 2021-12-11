@@ -9,7 +9,7 @@ var goldenerHerbstAnimation;
             this.velocity.random(100, 200);
         }
         move(_timeslice) {
-            console.log("wolke bewegen");
+            //console.log("wolke bewegen");
             let offset = new goldenerHerbstAnimation.Vector(this.velocity.x, 0);
             offset.scale(_timeslice);
             this.startingPosition.add(offset);

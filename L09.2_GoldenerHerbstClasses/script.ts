@@ -1,9 +1,10 @@
 /*
-Aufgabe: <L09.1_OldMacDonaldsFarm>
+Aufgabe: <L09.2_GoldenerHerbst: Classes>
 Name: <Eyüp Öcal>
 Matrikel: <268022>
 Datum: <10.12.2021>
 Quellen: <Mit Fatih zusammengearbeitet>
+Anmerkung: <Das Eichhörnchen mache ich, bei der nächsten Abgabe, wenn das ok ist>
 */
 namespace goldenerHerbstAnimation {
     export let crc2: CanvasRenderingContext2D;
@@ -134,13 +135,13 @@ namespace goldenerHerbstAnimation {
         for (let i: number = 0; i < nLeafs; i++) {
             let leaf: Leaf = new Leaf(colors[1]);
             leafs.push(leaf);
-            console.log(leafs);
+            //console.log(leafs);
 
         }
         for (let i: number = 0; i < nLeafs; i++) {
             let leaf: Leaf = new Leaf(colors[0]);
             leafs.push(leaf);
-            console.log(leafs);
+            //console.log(leafs);
 
         }
     }

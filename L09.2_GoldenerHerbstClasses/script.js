@@ -1,10 +1,11 @@
 "use strict";
 /*
-Aufgabe: <L09.1_OldMacDonaldsFarm>
+Aufgabe: <L09.2_GoldenerHerbst: Classes>
 Name: <Eyüp Öcal>
 Matrikel: <268022>
 Datum: <10.12.2021>
 Quellen: <Mit Fatih zusammengearbeitet>
+Anmerkung: <Das Eichhörnchen mache ich, bei der nächsten Abgabe, wenn das ok ist>
 */
 var goldenerHerbstAnimation;
 (function (goldenerHerbstAnimation) {
@@ -108,12 +109,12 @@ var goldenerHerbstAnimation;
         for (let i = 0; i < nLeafs; i++) {
             let leaf = new goldenerHerbstAnimation.Leaf(colors[1]);
             leafs.push(leaf);
-            console.log(leafs);
+            //console.log(leafs);
         }
         for (let i = 0; i < nLeafs; i++) {
             let leaf = new goldenerHerbstAnimation.Leaf(colors[0]);
             leafs.push(leaf);
-            console.log(leafs);
+            //console.log(leafs);
         }
     }
     function update() {

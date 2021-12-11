@@ -32,9 +32,6 @@ var goldenerHerbstAnimation;
             goldenerHerbstAnimation.crc2.stroke();
             goldenerHerbstAnimation.crc2.restore();
         }
-        changeDirection(_timeslice) {
-            console.log("change direction");
-        }
     }
     goldenerHerbstAnimation.Leaf = Leaf;
 })(goldenerHerbstAnimation || (goldenerHerbstAnimation = {}));
