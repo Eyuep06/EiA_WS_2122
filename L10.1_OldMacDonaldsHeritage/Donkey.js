@@ -1,16 +1,16 @@
 "use strict";
 var Heritage;
 (function (Heritage) {
-    class Dog extends Heritage.Animal {
+    class Donkey extends Heritage.Animal {
         constructor() {
-            super("Strolch", "Fleisch", "Wuff", 2, 10);
+            super("Esel", "Heu", "IiiAaa", 3, 9);
             this.breedArray = ["Pitbull", "Kangal", "Pudel"];
             this.i = Math.floor(Math.random() * 3 + 0);
-            this.specialAction = "Ich kann dir die Zeitung holen.";
+            this.specialAction = "Ich kann für dich tragen.";
             super.doSpecialAction(this.specialAction);
             super.breedMethode(this.breedArray[this.i]);
         }
     }
-    Heritage.Dog = Dog;
+    Heritage.Donkey = Donkey;
 })(Heritage || (Heritage = {}));
-//# sourceMappingURL=Dog.js.map
+//# sourceMappingURL=Donkey.js.map

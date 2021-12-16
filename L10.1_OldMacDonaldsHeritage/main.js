@@ -3,12 +3,11 @@ var Heritage;
 (function (Heritage) {
     window.addEventListener("load", handleLoad);
     let dog = new Heritage.Dog;
-    // let cow: Animal = new Cow;
-    // let chicken: Animal = new Chicken;
-    // let pig: Animal = new Pig;
-    // let donkey: Animal = new Donkey;
-    // let allAnimals: Animal[] = [dog, cow, chicken, pig, donkey];
-    let allAnimals = [dog];
+    let cow = new Heritage.Cow;
+    let chicken = new Heritage.Chicken;
+    let pig = new Heritage.Pig;
+    let donkey = new Heritage.Donkey;
+    let allAnimals = [dog, cow, chicken, pig, donkey];
     function handleLoad(_event) {
         startDay();
     }
