@@ -1,7 +1,7 @@
 namespace Heritage {
     export class Donkey extends Animal {
     breedArray: string[] = ["Pitbull", "Kangal", "Pudel"];
-    i: number = Math.floor(Math.random() * 3 + 0);
+    i: number = Math.floor(Math.random() * 3);
     specialAction: string = "Ich kann für dich tragen.";
 
 

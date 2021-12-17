@@ -1,7 +1,7 @@
 namespace Heritage {
     export class Pig extends Animal {
     breedArray: string[] = ["Wildschwein", "Berkshire-Schwein", "Hampshire-Schwein"];
-    i: number = Math.floor(Math.random() * 3 + 0);
+    i: number = Math.floor(Math.random() * 3);
     specialAction: string = "Ich kann leider nichts.";
 
 

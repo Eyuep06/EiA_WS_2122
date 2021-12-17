@@ -5,7 +5,7 @@ var Heritage;
         constructor() {
             super("Strolch", "Fleisch", "Wuff", 2, 10);
             this.breedArray = ["Pitbull", "Kangal", "Pudel"];
-            this.i = Math.floor(Math.random() * 3 + 0);
+            this.i = Math.floor(Math.random() * 3);
             this.specialAction = "Ich kann dir die Zeitung holen.";
             super.doSpecialAction(this.specialAction);
             super.breedMethode(this.breedArray[this.i]);

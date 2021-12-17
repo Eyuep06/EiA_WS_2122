@@ -31,6 +31,10 @@ namespace Heritage {
 
     function uptadeStock(): void {
         dog.foodAmount = dog.foodAmount - dog.eatenAmount;
+        cow.foodAmount = cow.foodAmount - cow.eatenAmount;
+        chicken.foodAmount = chicken.foodAmount - chicken.eatenAmount;
+        pig.foodAmount = pig.foodAmount - pig.eatenAmount;
+        donkey.foodAmount = donkey.foodAmount - donkey.eatenAmount;
     }
 
 }

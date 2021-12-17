@@ -1,7 +1,7 @@
 namespace Heritage {
     export class Chicken extends Animal {
     breedArray: string[] = ["Seidenhuhn", "Leghorn", "Brahma"];
-    i: number = Math.floor(Math.random() * 3 + 0);
+    i: number = Math.floor(Math.random() * 3);
     specialAction: string = "Ich kann dir Eier legen.";
 
 
