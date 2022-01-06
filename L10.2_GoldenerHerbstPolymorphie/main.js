@@ -6,9 +6,9 @@ var Polymorphie;
     let imgageMountain;
     let imageSun;
     let imageTree;
-    let leafs = [];
     let squirrel;
     let colors = ["brown", "orange"];
+    let moveables = [];
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
         let canvas = document.querySelector("canvas");
@@ -98,20 +98,22 @@ var Polymorphie;
     function createCloud() {
         cloud = new Polymorphie.Cloud();
         cloud.draw();
+        moveables.push(cloud);
     }
     function createSquirrel() {
         squirrel = new Polymorphie.Squirrel();
         squirrel.draw();
+        moveables.push(squirrel);
     }
     function createLeafs(nLeafs) {
         for (let i = 0; i < nLeafs; i++) {
             let leaf = new Polymorphie.Leaf(colors[1]);
-            leafs.push(leaf);
+            moveables.push(leaf);
             //console.log(leafs);
         }
         for (let i = 0; i < nLeafs; i++) {
             let leaf = new Polymorphie.Leaf(colors[0]);
-            leafs.push(leaf);
+            moveables.push(leaf);
             //console.log(leafs);
         }
     }
@@ -120,8 +122,8 @@ var Polymorphie;
         Polymorphie.crc2.putImageData(imageSun, 0, 0);
         Polymorphie.crc2.putImageData(imgageMountain, 0, 0);
         Polymorphie.crc2.putImageData(imageTree, 0, 0);
-        for (let leaf of leafs) {
-            leaf.move();
+        for (let leaf of moveables) {
+            leaf.move(1 / 50, 0);
             leaf.draw();
         }
         cloud.draw();
@@ -129,5 +131,6 @@ var Polymorphie;
         squirrel.draw();
         squirrel.move();
     }
+    console.log(moveables);
 })(Polymorphie || (Polymorphie = {}));
 //# sourceMappingURL=main.js.map

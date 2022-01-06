@@ -5,9 +5,9 @@ namespace Polymorphie {
     let imgageMountain: ImageData;
     let imageSun: ImageData;
     let imageTree: ImageData;
-    let leafs: Leaf[] = [];
     let squirrel: Squirrel;
     let colors: string[] = ["brown", "orange"];
+    let moveables: Moveable[] = [];
 
 
     window.addEventListener("load", handleLoad);
@@ -119,12 +119,14 @@ namespace Polymorphie {
     function createCloud(): void {
         cloud = new Cloud();
         cloud.draw();
+        moveables.push(cloud);
 
     }
 
     function createSquirrel(): void {
         squirrel = new Squirrel();
         squirrel.draw();
+        moveables.push(squirrel);
     }
 
 
@@ -132,13 +134,13 @@ namespace Polymorphie {
     function createLeafs(nLeafs: number): void {
         for (let i: number = 0; i < nLeafs; i++) {
             let leaf: Leaf = new Leaf(colors[1]);
-            leafs.push(leaf);
+            moveables.push(leaf);
             //console.log(leafs);
 
         }
         for (let i: number = 0; i < nLeafs; i++) {
             let leaf: Leaf = new Leaf(colors[0]);
-            leafs.push(leaf);
+            moveables.push(leaf);
             //console.log(leafs);
 
         }
@@ -149,8 +151,8 @@ namespace Polymorphie {
         crc2.putImageData(imageSun, 0, 0);
         crc2.putImageData(imgageMountain, 0, 0);
         crc2.putImageData(imageTree, 0, 0);
-        for (let leaf of leafs) {
-            leaf.move();
+        for (let leaf of moveables) {
+            leaf.move(1 / 50, 0);
             leaf.draw();
         }
         cloud.draw();
@@ -159,12 +161,14 @@ namespace Polymorphie {
         squirrel.draw();
         squirrel.move();
 
-        
+
 
 
 
     }
-
+    
+    console.log(moveables);
+    
 
 }
-    
+
