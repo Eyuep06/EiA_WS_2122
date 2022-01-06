@@ -1,4 +1,10 @@
 "use strict";
+/*
+Aufgabe: <L10.1_OldMacDonaldsHeritage>
+Name: <Eyüp Öcal>
+Matrikel: <268022>
+Datum: <17.12.2021>
+*/
 var Heritage;
 (function (Heritage) {
     window.addEventListener("load", handleLoad);
