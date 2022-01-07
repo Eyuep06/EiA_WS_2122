@@ -25,6 +25,7 @@ var Polymorphie;
                 Polymorphie.crc2.translate(x, y);
                 Polymorphie.crc2.fill(particle);
                 Polymorphie.crc2.restore();
+                //console.log(x, y);
             }
             Polymorphie.crc2.restore();
         }

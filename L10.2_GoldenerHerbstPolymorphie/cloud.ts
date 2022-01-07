@@ -29,6 +29,8 @@ namespace Polymorphie {
                 crc2.translate(x, y);
                 crc2.fill(particle);
                 crc2.restore();
+                //console.log(x, y);
+                
             }
 
             crc2.restore();
