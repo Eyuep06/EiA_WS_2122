@@ -35,13 +35,11 @@ namespace Advanced {
         createCloud();
         createLeafs(10);
 
+
         canvas.addEventListener("mouseup", dropHazelnut);
 
         window.setInterval(update, 20);
     }
-
-
-
 
     function drawBackground(): void {
         let gradient: CanvasGradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
@@ -106,8 +104,8 @@ namespace Advanced {
         crc2.fillStyle = "brown";
         crc2.fillRect(_positionX, _positionY, 50, 100);
 
-        let nParticles: number = 40;
-        let radiusParticle: number = 30;
+        let nParticles: number = 45;
+        let radiusParticle: number = 35;
         let particle: Path2D = new Path2D();
 
         particle.arc(0, 0, radiusParticle, 0, 2 * Math.PI);
@@ -136,8 +134,9 @@ namespace Advanced {
         crc2.fillStyle = "black";
         crc2.fill();
         crc2.restore();
-        console.log(crc2);
+        // console.log(crc2);
         imageHazelnut = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
+
     }
 
 
@@ -174,21 +173,15 @@ namespace Advanced {
         crc2.putImageData(imageSun, 0, 0);
         crc2.putImageData(imgageMountain, 0, 0);
         crc2.putImageData(imageTree, 0, 0);
-        crc2.putImageData(imageHazelnut, 0, 0);
 
 
         for (let i: number = 0; i < moveables.length; i++) {
             moveables[i].move(1 / 50, 0);
             moveables[i].draw();
         }
+        crc2.putImageData(imageHazelnut, 0, 0);
 
     }
-
-
-
-
-
-
 
 }
 

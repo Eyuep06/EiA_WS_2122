@@ -86,8 +86,8 @@ var Advanced;
         Advanced.crc2.beginPath();
         Advanced.crc2.fillStyle = "brown";
         Advanced.crc2.fillRect(_positionX, _positionY, 50, 100);
-        let nParticles = 40;
-        let radiusParticle = 30;
+        let nParticles = 45;
+        let radiusParticle = 35;
         let particle = new Path2D();
         particle.arc(0, 0, radiusParticle, 0, 2 * Math.PI);
         Advanced.crc2.save();
@@ -113,7 +113,7 @@ var Advanced;
         Advanced.crc2.fillStyle = "black";
         Advanced.crc2.fill();
         Advanced.crc2.restore();
-        console.log(Advanced.crc2);
+        // console.log(crc2);
         imageHazelnut = Advanced.crc2.getImageData(0, 0, Advanced.crc2.canvas.width, Advanced.crc2.canvas.height);
     }
     function createCloud() {
@@ -139,11 +139,11 @@ var Advanced;
         Advanced.crc2.putImageData(imageSun, 0, 0);
         Advanced.crc2.putImageData(imgageMountain, 0, 0);
         Advanced.crc2.putImageData(imageTree, 0, 0);
-        Advanced.crc2.putImageData(imageHazelnut, 0, 0);
         for (let i = 0; i < moveables.length; i++) {
             moveables[i].move(1 / 50, 0);
             moveables[i].draw();
         }
+        Advanced.crc2.putImageData(imageHazelnut, 0, 0);
     }
 })(Advanced || (Advanced = {}));
 //# sourceMappingURL=main.js.map
