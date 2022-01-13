@@ -17,6 +17,7 @@ var Advanced;
     let colors = ["brown", "orange"];
     let moveables = [];
     let hazelnut;
+    let hazelnutPositions = [];
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
         let canvas = document.querySelector("canvas");
@@ -107,6 +108,9 @@ var Advanced;
     function createHazelnut(_event) {
         hazelnut = new Advanced.Hazelnut(_event.clientX, _event.clientY);
         moveables.push(hazelnut);
+        let hazelnutSpot = new Advanced.Vector(_event.clientX, _event.clientY);
+        hazelnutPositions.push(hazelnutSpot);
+        //console.log(hazelnutPositions);
     }
     function createCloud() {
         cloud = new Advanced.Cloud();
@@ -134,7 +138,6 @@ var Advanced;
         for (let i = 0; i < moveables.length; i++) {
             moveables[i].move(1 / 50, 0);
             moveables[i].draw();
-            console.log(moveables);
         }
     }
     //console.log(update);

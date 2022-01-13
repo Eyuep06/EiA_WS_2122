@@ -9,7 +9,7 @@ var Advanced;
         draw() {
             Advanced.crc2.save();
             Advanced.crc2.beginPath();
-            Advanced.crc2.arc(this.position.x, this.position.y, 5, 0, 2 * Math.PI);
+            Advanced.crc2.arc(this.position.x, this.position.y, 10, 0, 2 * Math.PI);
             Advanced.crc2.fillStyle = "black";
             Advanced.crc2.fill();
             Advanced.crc2.restore();

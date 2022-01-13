@@ -16,6 +16,7 @@ namespace Advanced {
     let colors: string[] = ["brown", "orange"];
     let moveables: Moveable[] = [];
     let hazelnut: Hazelnut;
+    let hazelnutPositions: Vector[] = [];
 
 
     window.addEventListener("load", handleLoad);
@@ -131,6 +132,11 @@ namespace Advanced {
     function createHazelnut(_event: MouseEvent): void {
         hazelnut = new Hazelnut(_event.clientX, _event.clientY);
         moveables.push(hazelnut);
+        let hazelnutSpot: Vector = new Vector(_event.clientX, _event.clientY);
+        hazelnutPositions.push(hazelnutSpot);
+        //console.log(hazelnutPositions);
+        
+
     }
 
 
@@ -174,8 +180,6 @@ namespace Advanced {
         for (let i: number = 0; i < moveables.length; i++) {
             moveables[i].move(1 / 50, 0);
             moveables[i].draw();
-            console.log(moveables);
-            
         }
 
     
