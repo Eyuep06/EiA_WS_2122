@@ -25,9 +25,7 @@ var Advanced;
         }
         randomForSquirrel(_minLength, _maxLength) {
             let length = _minLength + Math.random() * (_maxLength - _minLength);
-            let direction = Math.random() * 2 * Math.PI;
-            console.log(direction);
-            console.log(length);
+            //let direction: number = Math.random() * 2 * Math.PI;
             this.set(Math.cos(1), Math.sin(0));
             this.scale(length);
         }

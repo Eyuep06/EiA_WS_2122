@@ -10,12 +10,12 @@ namespace Advanced {
     let cloud: Cloud;
     let imageBg: ImageData;
     let imgageMountain: ImageData;
-    let imageHazelnut: ImageData;
     let imageSun: ImageData;
     let imageTree: ImageData;
     let squirrel: Squirrel;
     let colors: string[] = ["brown", "orange"];
     let moveables: Moveable[] = [];
+    let hazelnut: Hazelnut;
 
 
     window.addEventListener("load", handleLoad);
@@ -36,7 +36,7 @@ namespace Advanced {
         createLeafs(10);
 
 
-        canvas.addEventListener("mouseup", dropHazelnut);
+        canvas.addEventListener("mouseup", createHazelnut);
 
         window.setInterval(update, 20);
     }
@@ -125,20 +125,13 @@ namespace Advanced {
         imageTree = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
     }
 
-    function dropHazelnut(_event: MouseEvent): void {
-        let hazelnutSpot: Vector = new Vector(_event.clientX, _event.clientY);
-        console.log(hazelnutSpot);
-        crc2.save();
-        crc2.beginPath();
-        crc2.arc(_event.clientX, _event.clientY, 30, 0, 2 * Math.PI);
-        crc2.fillStyle = "black";
-        crc2.fill();
-        crc2.restore();
-        // console.log(crc2);
-        imageHazelnut = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
 
+
+
+    function createHazelnut(_event: MouseEvent): void {
+        hazelnut = new Hazelnut(_event.clientX, _event.clientY);
+        moveables.push(hazelnut);
     }
-
 
 
 
@@ -175,13 +168,20 @@ namespace Advanced {
         crc2.putImageData(imageTree, 0, 0);
 
 
+
+
+
         for (let i: number = 0; i < moveables.length; i++) {
             moveables[i].move(1 / 50, 0);
             moveables[i].draw();
+            console.log(moveables);
+            
         }
-        crc2.putImageData(imageHazelnut, 0, 0);
+
+    
 
     }
+    //console.log(update);
 
 }
 

@@ -11,12 +11,12 @@ var Advanced;
     let cloud;
     let imageBg;
     let imgageMountain;
-    let imageHazelnut;
     let imageSun;
     let imageTree;
     let squirrel;
     let colors = ["brown", "orange"];
     let moveables = [];
+    let hazelnut;
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
         let canvas = document.querySelector("canvas");
@@ -32,7 +32,7 @@ var Advanced;
         createSquirrel();
         createCloud();
         createLeafs(10);
-        canvas.addEventListener("mouseup", dropHazelnut);
+        canvas.addEventListener("mouseup", createHazelnut);
         window.setInterval(update, 20);
     }
     function drawBackground() {
@@ -104,17 +104,9 @@ var Advanced;
         Advanced.crc2.restore();
         imageTree = Advanced.crc2.getImageData(0, 0, Advanced.crc2.canvas.width, Advanced.crc2.canvas.height);
     }
-    function dropHazelnut(_event) {
-        let hazelnutSpot = new Advanced.Vector(_event.clientX, _event.clientY);
-        console.log(hazelnutSpot);
-        Advanced.crc2.save();
-        Advanced.crc2.beginPath();
-        Advanced.crc2.arc(_event.clientX, _event.clientY, 30, 0, 2 * Math.PI);
-        Advanced.crc2.fillStyle = "black";
-        Advanced.crc2.fill();
-        Advanced.crc2.restore();
-        // console.log(crc2);
-        imageHazelnut = Advanced.crc2.getImageData(0, 0, Advanced.crc2.canvas.width, Advanced.crc2.canvas.height);
+    function createHazelnut(_event) {
+        hazelnut = new Advanced.Hazelnut(_event.clientX, _event.clientY);
+        moveables.push(hazelnut);
     }
     function createCloud() {
         cloud = new Advanced.Cloud();
@@ -142,8 +134,9 @@ var Advanced;
         for (let i = 0; i < moveables.length; i++) {
             moveables[i].move(1 / 50, 0);
             moveables[i].draw();
+            console.log(moveables);
         }
-        Advanced.crc2.putImageData(imageHazelnut, 0, 0);
     }
+    //console.log(update);
 })(Advanced || (Advanced = {}));
 //# sourceMappingURL=main.js.map
