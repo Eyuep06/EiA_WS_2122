@@ -3,8 +3,9 @@
 Aufgabe: <L11.1_GoldenerHerbstAdvanced>
 Name: <Eyüp Öcal>
 Matrikel: <268022>
-Datum: <06.01.2022>
+Datum: <14.01.2022>
 Quellen: <Mit Fatih zusammengearbeitet>
+Anmerkung: Code nicht fertig geworden
 */
 var Advanced;
 (function (Advanced) {
@@ -17,7 +18,7 @@ var Advanced;
     let colors = ["brown", "orange"];
     let moveables = [];
     let hazelnut;
-    let hazelnutPositions = [];
+    Advanced.hazelnutPositions = [];
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
         let canvas = document.querySelector("canvas");
@@ -109,8 +110,8 @@ var Advanced;
         hazelnut = new Advanced.Hazelnut(_event.clientX, _event.clientY);
         moveables.push(hazelnut);
         let hazelnutSpot = new Advanced.Vector(_event.clientX, _event.clientY);
-        hazelnutPositions.push(hazelnutSpot);
-        //console.log(hazelnutPositions);
+        Advanced.hazelnutPositions.push(hazelnutSpot);
+        console.log(Advanced.hazelnutPositions[0]);
     }
     function createCloud() {
         cloud = new Advanced.Cloud();
@@ -140,6 +141,5 @@ var Advanced;
             moveables[i].draw();
         }
     }
-    //console.log(update);
 })(Advanced || (Advanced = {}));
 //# sourceMappingURL=main.js.map

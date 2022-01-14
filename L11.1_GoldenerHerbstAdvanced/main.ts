@@ -2,8 +2,9 @@
 Aufgabe: <L11.1_GoldenerHerbstAdvanced>
 Name: <Eyüp Öcal>
 Matrikel: <268022>
-Datum: <06.01.2022>
+Datum: <14.01.2022>
 Quellen: <Mit Fatih zusammengearbeitet>
+Anmerkung: Code nicht fertig geworden
 */
 namespace Advanced {
     export let crc2: CanvasRenderingContext2D;
@@ -16,8 +17,8 @@ namespace Advanced {
     let colors: string[] = ["brown", "orange"];
     let moveables: Moveable[] = [];
     let hazelnut: Hazelnut;
-    let hazelnutPositions: Vector[] = [];
-
+    export let hazelnutPositions: Vector[] = [];
+    
 
     window.addEventListener("load", handleLoad);
 
@@ -134,8 +135,9 @@ namespace Advanced {
         moveables.push(hazelnut);
         let hazelnutSpot: Vector = new Vector(_event.clientX, _event.clientY);
         hazelnutPositions.push(hazelnutSpot);
-        //console.log(hazelnutPositions);
-        
+        console.log(hazelnutPositions[0]);
+
+
 
     }
 
@@ -182,10 +184,10 @@ namespace Advanced {
             moveables[i].draw();
         }
 
-    
+
 
     }
-    //console.log(update);
+
 
 }
 
