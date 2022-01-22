@@ -1,9 +1,9 @@
 /*
-Aufgabe: <L10.2_GoldenerHerbstPolymorphie>
+Aufgabe: <L11.2_GoldenerHerbstFinale>
 Name: <Eyüp Öcal>
 Matrikel: <268022>
-Datum: <06.01.2022>
-Quellen: <Mit Fatih zusammengearbeitet und sein Eichhörnchen geklaut>
+Datum: <20.01.2022>
+Quellen: <Mit Fatih zusammengearbeitet>
 */
 namespace L11_2 {
     export let crc2: CanvasRenderingContext2D;

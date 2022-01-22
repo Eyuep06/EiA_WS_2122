@@ -1,10 +1,10 @@
 "use strict";
 /*
-Aufgabe: <L10.2_GoldenerHerbstPolymorphie>
+Aufgabe: <L11.2_GoldenerHerbstFinale>
 Name: <Eyüp Öcal>
 Matrikel: <268022>
-Datum: <06.01.2022>
-Quellen: <Mit Fatih zusammengearbeitet und sein Eichhörnchen geklaut>
+Datum: <20.01.2022>
+Quellen: <Mit Fatih zusammengearbeitet>
 */
 var L11_2;
 (function (L11_2) {
